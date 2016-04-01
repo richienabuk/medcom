@@ -1,0 +1,56 @@
+.featured {
+	padding: 50px 0;
+}
+
+/* welcome region */
+.featured .pdtop {
+	margin-top: 30px;
+}
+/* welcome title */
+.featured .region-featured-left h3 {
+	padding-bottom: 10px;
+	margin-bottom: 25px;
+	border-style: dashed;
+	border-color: #dcdcdc;
+	border-width: 0 0 1px 0;
+}
+.featured .region-featured-left h3 strong {
+	font-weight: 900;
+  color: #c00000;
+}
+.featured .region-featured-right h2 strong {
+	font-weight: 900;
+  color: #c00000;
+}
+/* end of title */
+
+.featured .region-featured-left {
+	position: relative;
+	padding: 30px;
+	border: 6px solid #f2f2f2;
+	border-radius: 1px;
+}
+.featured .region-featured-left a {
+color: #c00000;
+}
+/*
+.featured .region-featured-left a::before {
+	position: absolute;
+	content: "\f105";
+	font-family: "FontAwesome";
+	right: 205px;
+	font-size: 13px;
+	transition: all 100ms ease-out;
+}
+*/
+/* end of welcome */
+
+.region-featured-right h4 {
+	color: #0088cc;
+	color: #c00000;
+}
+
+.feature-box .feature-box-icon {
+    background-color: #0088cc;
+    background-color:	#c00000;
+}

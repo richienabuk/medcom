@@ -1,0 +1,248 @@
+<?php
+
+
+/**
+ * @file
+ * Functions to support theming in the medcom theme.
+ */
+define('THEME_PATH', base_path() . drupal_get_path('theme', 'medcom'));
+// Change the value to increase the slideshow.
+define('SLIDESHOW_COUNT', 5);
+
+use Drupal\Component\Utility\SafeMarkup;
+use Drupal\Component\Utility\Xss;
+use Drupal\Core\Template\Attribute;
+use Drupal\file\Plugin\Core\Entity\FileInterface;
+
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ *
+ * Adds body classes if certain regions have content.
+ */
+
+function medcom_preprocess_breadcrumb(&$variables){
+  if(($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']){
+    $variables['breadcrumb'][] = array(
+      'text' => $node->getTitle()
+    );
+   }
+}
+
+/**
+ * HTML5 placeholder attribute in search form
+ */
+function medcom_form_search_block_form_alter(&$form, &$form_state) {
+  $form['keys']['#attributes']['placeholder'] = t('Search');    
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Alters the login form to use placeholder attributes and hides the titles.
+ */
+function medcom_form_user_login_form_alter(&$form, $form_state) {
+  // Hide the username textfield label and use a placeholder instead.
+  $form['name']['#title_display'] = 'invisible';
+  $form['name']['#placeholder'] = $form['name']['#description'];
+  unset($form['name']['#description']);
+
+  // Hide the password textfield label and use a placeholder instead.
+  $form['pass']['#title_display'] = 'invisible';
+  $form['pass']['#placeholder'] = t('Enter your password');
+  unset($form['pass']['#description']);
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for page templates.
+ */
+function medcom_preprocess_page_title(&$variables) {
+  // Since the title and the shortcut link are both block level elements,
+  // positioning them next to each other is much simpler with a wrapper div.
+  if (!empty($variables['title_suffix']['add_or_remove_shortcut']) && $variables['title']) {
+    // Add a wrapper div using the title_prefix and title_suffix render
+    // elements.
+    $variables['title_prefix']['shortcut_wrapper'] = array(
+      '#markup' => '<div class="shortcut-wrapper clearfix">',
+      '#weight' => 100,
+    );
+    $variables['title_suffix']['shortcut_wrapper'] = array(
+      '#markup' => '</div>',
+      '#weight' => -99,
+    );
+    // Make sure the shortcut link is the first item in title_suffix.
+    $variables['title_suffix']['add_or_remove_shortcut']['#weight'] = -100;
+  }
+}
+
+function medcom_preprocess_page(&$variables) {
+
+  
+  $sidebar_first = $variables['page']['sidebar_first'];
+  $sidebar_second = $variables['page']['sidebar_second'];
+  
+  // Dynamic sidebars
+  if($sidebar_first && $sidebar_second) {
+    $variables['main_grid_class'] = 'col-md-6 large-push-3';
+    $variables['sidebar_first_grid_class'] = 'col-md-3 large-pull-6';
+    $variables['sidebar_second_grid_class'] = 'col-md-3';
+  }
+  elseif (!$sidebar_first && $sidebar_second) {
+    $variables['main_grid_class'] = 'col-md-8';
+    $variables['sidebar_first_grid_class'] = '';
+    $variables['sidebar_second_grid_class'] = 'col-md-4';
+  }
+  elseif ($sidebar_first && !$sidebar_second) {
+    $variables['main_grid_class'] = 'col-md-8 large-push-4';
+    $variables['sidebar_first_grid_class'] = 'col-md-4 large-pull-8';
+    $variables['sidebar_second_grid_class'] = '';
+  }
+  else {
+    $variables['main_grid_class'] = 'col-md-12';
+    $variables['sidebar_first_grid_class'] = '';
+    $variables['sidebar_second_grid_class'] = '';
+  }
+	
+  $show_slideshow = theme_get_setting('slideshow_display', 'medcom');
+  if ($variables['is_front'] && $show_slideshow) {
+    $variables['slider'] = array();
+    for ($i = 1; $i <= SLIDESHOW_COUNT; $i++) {
+      $fid = theme_get_setting("slide_image_{$i}", "medcom");
+      $file = file_load($fid[0]);
+      if (!empty($file)) {
+        $uri = $file->getFileUri();
+        $image_path = file_create_url($uri);
+      }
+      else {
+        $image_path = THEME_PATH . "/images/slide-{$i}.jpg";
+      }
+      $variables['slider'][] = array(
+        'url' => theme_get_setting("slide_url_{$i}", "medcom"),
+        'src' => $image_path,
+        'title' => theme_get_setting("slide_title_{$i}", "medcom"),
+      );
+    }
+  }
+
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for maintenance-page.html.twig.
+ */
+function medcom_preprocess_maintenance_page(&$variables) {
+  // By default, site_name is set to Drupal if no db connection is available
+  // or during site installation. Setting site_name to an empty string makes
+  // the site and update pages look cleaner.
+  // @see template_preprocess_maintenance_page
+  if (!$variables['db_is_active']) {
+    $variables['site_name'] = '';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block.html.twig.
+ */
+function medcom_preprocess_block(&$variables) {
+  // Add a clearfix class to system branding blocks.
+  if ($variables['plugin_id'] == 'system_branding_block') {
+    $variables['attributes']['class'][] = 'clearfix';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for menu.html.twig.
+ */
+function medcom_preprocess_menu(&$variables) {
+  $variables['attributes']['class'][] = 'clearfix';
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ */
+function medcom_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  if ($variables['element']['#form_id'] == 'search_block_form') {
+    $suggestions[] = 'form__search_block_form';
+  }
+}
+
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * @param $form
+ *   The form.
+ * @param $form_state
+ *   The form state.
+ */
+function medcom_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+
+	$form['medcom_settings'] = array(
+    '#type' => 'details',
+    '#title' => t('Medcom Settings'),
+    '#collapsible' => FALSE,
+    '#collapsed' => FALSE,
+  );
+  $form['medcom_settings']['slideshow'] = array(
+    '#type' => 'details',
+    '#title' => t('Front Page Slideshow'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+  $form['medcom_settings']['slideshow']['slideshow_display'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show slideshow'),
+    '#default_value' => theme_get_setting('slideshow_display', 'medcom'),
+    '#description'   => t("Check this option to show Slideshow in front page. Uncheck to hide."),
+  );
+  $form['medcom_settings']['slideshow']['slide'] = array(
+    '#markup' => t('You can change the title, url and image of each slide in the following Slide Setting fieldsets.'),
+  );
+
+  for ($i = 1; $i <= SLIDESHOW_COUNT; $i++) {
+    $form['medcom_settings']['slideshow']['slide' . $i] = array(
+      '#type' => 'details',
+      '#title' => t('Slide '.$i),
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+    );
+    $form['medcom_settings']['slideshow']['slide' . $i]['slide_title_' . $i] = array(
+      '#type' => 'textfield',
+      '#title' => t('Slide '.$i.' Title'),
+      '#default_value' => theme_get_setting("slide_title_{$i}", "medcom"),
+    );
+    $form['medcom_settings']['slideshow']['slide' . $i]['slide_image_' . $i] = array(
+      '#type' => 'managed_file',
+      '#title' => t('Slide '.$i.' Image'),
+      '#description' => t('Use same size for all the slideshow images(Recommented size : 930 x 320).'),
+      '#default_value' => theme_get_setting("slide_image_{$i}", "medcom"),
+      '#upload_location' => 'public://',
+    );
+    $form['medcom_settings']['slideshow']['slide' . $i]['slide_url_' . $i] = array(
+      '#type' => 'textfield',
+      '#title' => t('Slide '.$i.' URL'),
+      '#default_value' => theme_get_setting("slide_url_{$i}", "medcom"),
+    );
+  }
+  // Custom submit to save the file permenant.
+  $form['#submit'][] = 'medcom_settings_form_submit';
+}
+
+/**
+ * Custom submit handler for integrity settings form.
+ */
+function medcom_settings_form_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $account = \Drupal::currentUser();
+  $values = $form_state->getValues();
+  for ($i = 0; $i <= SLIDESHOW_COUNT; $i++) {
+    if (isset($values["slide_image_{$i}"]) && !empty($values["slide_image_{$i}"])) {
+      // Load the file via file.fid.
+      $file = file_load($values["slide_image_{$i}"][0]);
+      // Change status to permanent.
+      $file->setPermanent();
+      $file->save();
+      $file_usage = \Drupal::service('file.usage');
+      $file_usage->add($file, 'user', 'user', $account->id());
+    }
+  }
+}
+

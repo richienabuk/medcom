@@ -1,0 +1,226 @@
+@media screen and (min-width: 769px) {
+@import url(http://fonts.googleapis.com/css?family=Capriola);
+.main-menu,
+.main-menu ul,
+.main-menu ul li,
+.main-menu ul li a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  font-family: Capriola, Helvetica, sans-serif;
+}
+.main-menu {
+  width: auto;
+  height: 59px;
+  padding-bottom: 4px;
+}
+.main-menu.align-right {
+  float: right;
+}
+.main-menu.align-right ul li {
+  float: right;
+  margin-right: 0;
+  margin-left: 4px;
+}
+.main-menu.align-right ul li:first-child,
+.main-menu.align-right ul li:first-child > a {
+  border-bottom-right-radius: 3px;
+}
+.main-menu #bg-one,
+.main-menu #bg-two,
+.main-menu #bg-three,
+.main-menu #bg-four {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.main-menu #bg-one {
+  height: 10px;
+  background: #0f71ba;
+}
+.main-menu #bg-two {
+  height: 59px;
+  z-index: 2;
+  background: url(../../images/menu_bg.png);
+}
+.main-menu #bg-three {
+  bottom: 4px;
+  height: 55px;
+  z-index: 3;
+  background: #9D2C30;
+  background: -moz-linear-gradient(top, #9D2C30 0%, #9D4D2C  100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9D2C30), color-stop(100%, #9D4D2C ));
+  background: -webkit-linear-gradient(top, #9D2C30 0%, #9D4D2C  100%);
+  background: -o-linear-gradient(top, #9D2C30 0%, #9D4D2C  100%);
+  background: -ms-linear-gradient(top, #9D2C30 0%, #9D4D2C  100%);
+  background: linear-gradient(to bottom, #9D2C30 0%, #9D4D2C  100%);
+}
+.main-menu #bg-four {
+  bottom: 4px;
+  height: 55px;
+  z-index: 4;
+  background: url(../../images/menu_bg.png);
+}
+.main-menu ul {
+  height: 59px;
+}
+.main-menu ul li {/*
+  float: left;
+  margin-right: 4px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;*/
+  z-index: 5;
+  text-align: center;
+}
+.main-menu ul li a {
+  padding: 24px 30px 20px 30px;
+  margin-bottom: 4px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  color: #eeeeee;
+  font-size: 15px;
+  text-decoration: none;
+}
+.main-menu ul li:first-child,
+.main-menu ul li:first-child > a {
+  border-bottom-left-radius: 3px;
+/*	text-align: left;*/
+}
+.main-menu ul li:hover,
+.main-menu ul li .is-active {
+  background: #0f71ba;
+  background: -moz-linear-gradient(top, #3fa4f0 0%, #0f71ba 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3fa4f0), color-stop(100%, #0f71ba));
+  background: -webkit-linear-gradient(top, #3fa4f0 0%, #0f71ba 100%);
+  background: -o-linear-gradient(top, #3fa4f0 0%, #0f71ba 100%);
+  background: -ms-linear-gradient(top, #3fa4f0 0%, #0f71ba 100%);
+  background: linear-gradient(to bottom, #3fa4f0 0%, #0f71ba 100%);
+}
+.main-menu ul li a:hover,
+.main-menu ul li .is-active > a {
+  background: url(../../images/menu_bg.png);
+  color: #ffffff;
+}
+
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: none !important;
+}
+
+.main-menu .navbar-nav li:first-child:nth-last-child(1) {
+    width: 100%
+}
+
+.main-menu .navbar-nav li:first-child:nth-last-child(2),
+.main-menu .navbar-nav li:first-child:nth-last-child(2) ~ li {
+    width: 50%
+}
+
+.main-menu .navbar-nav li:first-child:nth-last-child(3),
+.main-menu .navbar-nav li:first-child:nth-last-child(3) ~ li {
+    width: 33.3333%
+}
+
+.main-menu .navbar-nav li:first-child:nth-last-child(4),
+.main-menu .navbar-nav li:first-child:nth-last-child(4) ~ li {
+    width: 25%
+}
+
+.main-menu .navbar-nav li:first-child:nth-last-child(5),
+.main-menu .navbar-nav li:first-child:nth-last-child(5) ~ li {
+    width: 20%
+}
+
+.main-menu .navbar-nav li:first-child:nth-last-child(6),
+.main-menu .navbar-nav li:first-child:nth-last-child(6) ~ li {
+    width: 16.6666%
+}
+
+.main-menu .navbar-nav li:first-child:nth-last-child(7),
+.main-menu .navbar-nav li:first-child:nth-last-child(7) ~ li {
+    width: 14.25%
+}
+
+.main-menu .navbar-nav li:first-child:nth-last-child(8),
+.main-menu .navbar-nav li:first-child:nth-last-child(8) ~ li {
+    width: 12.5%
+}
+
+.main-menu .navbar-nav li:first-child:nth-last-child(9),
+.main-menu .navbar-nav li:first-child:nth-last-child(9) ~ li {
+    width: 11.1111%
+}
+
+.main-menu .navbar-nav li:first-child:nth-last-child(10),
+.main-menu .navbar-nav li:first-child:nth-last-child(10) ~ li {
+    width: 10%
+}
+
+.main-menu .navbar-nav li:last-child a {
+    border-right: none
+}
+
+.navbar-nav {
+	width: 100%;
+}
+
+}
+
+@media all and (max-width: 768px) {
+	.main-menu {
+    -moz-box-shadow: 0 0 5px 0 #555;
+    -webkit-box-shadow: 0 0 5px 0 #555;
+    box-shadow: 0 0 5px 0 #555;
+	}
+	.navbar-collapse {/*
+			background-color: #fff;
+			height: 100%;
+			position: relative;
+			z-index: 10;
+			-moz-transition: left 150ms step-end;
+			-o-transition: left 150ms step-end;
+			-webkit-transition: left 150ms step-end;
+			transition: left 150ms step-end*/
+	}
+	.navbar-collapse .navbar-nav {/*
+			margin-bottom: 38px*/
+	}
+	.navbar-collapse .navbar-nav li {
+			border-bottom: 1px solid #9D2C30;
+			float: none;
+			padding-top: 0;
+			width: 100% !important;
+			text-align: center;
+	}
+	.navbar-collapse .navbar-nav li:hover {
+			border-bottom: 1px solid #9D4D2C;
+			margin-bottom: 5px
+	}
+	.navbar-collapse .navbar-nav a {
+			border-right: none;
+			width: 100%;
+			font-size: 18px;
+			color: #c00000;
+	}
+	.toolbar-fixed #main-menu {
+			padding-top: 0
+	}
+	.toolbar-fixed #main-menu .menu {
+			margin-top: 10px
+	}
+	
+.navbar-toggle {
+	color: #c00000;
+	font-size: 17px;
+  padding: 0!important;
+}
+}
+

@@ -1,0 +1,37 @@
+name: medcom Theme
+type: theme
+base theme: classy
+description: 'A flexible theme with many regions and a responsive, mobile-first layout.'
+package: Core
+core: '8.x'
+libraries:
+  - medcom/bootstrap
+  - medcom/global-css
+regions:
+  site_brand: 'Site Header'
+  top_right: 'Header Right'
+  navigation: Navigation
+  help: help
+  banner: Banner
+  featured_left: 'Featured Left'
+  featured_right: 'Featured Right'
+  panel_top: 'Panel Top'
+  services_first: 'Services First'
+  services_middle: 'Services Middle'
+  services_last: 'Services Last'
+  products_region: 'Products Region'
+  panel_bottom: 'Panel Bottom'
+  pre_content: 'Pre Content'
+  content_top: 'Content Top'
+  sidebar_first: 'First Sidebar'
+  content: Content
+  sidebar_second: 'Second Sidebar'
+  pre_footer: 'Pre Footer'
+  footer_top_first: 'Footer Top First'
+  footer_top_second: 'Footer Top Second'
+  footer_top_third: 'Footer Top Third'
+  footer_top_last: 'Footer Top Last'
+  
+ # Information added by Drupal.org packaging script on 2016-01-12
+version: '8.x-1.0'
+project: 'medcom_theme'

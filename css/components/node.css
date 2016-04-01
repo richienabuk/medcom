@@ -1,0 +1,38 @@
+.content-page {
+	padding: 5px 0 30px 0px;
+}
+
+.main-content {
+	padding: 30px 0 10px 0px;
+}
+
+.pre-content {
+	background-color: #9D4D2C;/*
+	border-bottom: 5px solid #CCC;
+	border-top: 5px solid #384045;*/
+/*	margin-bottom: 35px;*/
+	min-height: 50px;
+	padding: 0;
+	padding: 20px 10px;
+	position: relative;
+	text-align: left;
+}
+
+.pre-content .breadcrumb {
+	background: none;
+	margin: -3px 0 0;
+	padding: 0;
+}
+
+.pre-content .page-title {
+	border-bottom: 5px solid #CCC;
+	color: #FFF;
+	display: inline-block;
+	font-weight: 200;
+	margin: 0 0 -25px;
+	min-height: 37px;
+	font-size: 2.6em;
+	line-height: 46px;
+	padding: 0 0 17px;
+	position: relative;
+}

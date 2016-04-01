@@ -1,0 +1,42 @@
+bootstrap:
+  version: VERSION
+  css:
+    theme:
+      includes/bootstrap/css/bootstrap.min.css: {}
+      includes/fontawesome/css/font-awesome.min.css: {}
+  js:
+    includes/bootstrap/js/bootstrap.min.js: {}
+    js/custom.js: {}
+    js/jquery.flexslider-min.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+
+global-css:
+  version: VERSION
+  css:
+    base:
+      css/base/elements.css: {}
+      css/base/layout.css: {}
+    component:
+      css/components/header.css: {}
+      css/components/menu.css: {}
+      css/components/highlighted.css: {}
+      css/components/flexslider.css: {}
+      css/components/featured.css: {}
+      css/components/sidebar.css: {}
+      css/components/node.css: {}
+      css/components/comments.css: {}
+      css/components/forms.css: {}
+      css/components/blog.css: {}
+      css/components/services.css: {}
+      css/components/panels.css: {}
+      css/components/pre-footer.css: {}
+      css/components/footer.css: {}
+  js:
+    js/script.js: {}
+  dependencies:
+    - core/jquery

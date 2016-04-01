@@ -1,0 +1,232 @@
+
+/*
+ * 3.4  -> Top Search Bar
+ * -----------------------------------------------
+*/
+.search-form-wrapper {
+	position: relative;
+}
+.search-form-wrapper.toggle {
+	display: none;
+}
+.search-form-wrapper.toggle.active {
+	display: block;
+}
+
+.search-form-wrapper form {
+	padding: 10px;
+	position: relative;
+	width: 360px;
+	max-width: 100%;
+}
+.search-form-wrapper form label {
+	margin: 0px;
+	position: absolute;
+	right: 11px;
+	top: 11px;
+}
+.search-form-wrapper form label:before {
+	color: #00A3C8;
+	cursor: pointer;
+	content: "\f002";
+	font-family: fontawesome;
+	font-size: 17px;
+	position: absolute;
+	right: 13px;
+	top: 6px;
+}
+.search-form-wrapper form input[type="text"] {
+	background-color: #f3f3f3;
+	border: 1px solid #e1e1e1;
+	color: #555;
+	height: 40px;
+	padding: 8px 17px;
+	width: 100%;
+}
+.search-form-wrapper form input[type="submit"] {
+	background-color: #f3f3f3;
+	border-left: 1px solid #cdcdcd;
+	border: none;
+	height: 37px;
+	width: 50px;
+	text-indent: -999px;
+}
+/* form absolute */
+.search-form-wrapper.form-absolute form {
+	background-color: #333;
+	position: absolute;
+	right: 0px;
+	top: 12px;
+  	width: 370px;
+	z-index: 99;
+}
+/* form absolute */
+.search-form-wrapper.round form input[type="text"] {
+	border-radius: 30px;
+	border-width: 4px;
+}
+.search-form-wrapper.round form input[type="submit"] {
+	height: auto;
+	width: auto;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+.search-form-wrapper.round form label::before {
+	color: #cdcdcd;
+}
+
+
+
+
+
+/*
+ * 3.13 -> Form
+ * -----------------------------------------------
+*/
+ /*appoinment-form*/
+ .appoinment-form input {
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid #ccc;
+}
+.appoinment-form input[type="text"]:focus,
+.appoinment-form select:focus,
+.appoinment-form textarea:focus {
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	border-bottom: 1px solid #00A3C8;
+}
+.appoinment-form textarea {
+	width: 100%;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	padding: 10px;
+}
+/* Booking Form */
+.booking-form input,
+.booking-form a.btn {
+	border-radius: 36px;
+}
+.booking-form input {
+}
+.booking-form .form-group {
+	margin-bottom: 30px;
+	position: relative;
+}
+.booking-form input::-moz-placeholder {
+}
+.booking-form .form-control:focus, 
+.booking-form .form-control:active {
+}
+.booking-form .styled-select::after {
+	border-radius: 0 36px 36px 0;
+	bottom: 0;
+	color: #333;
+	content: "\f107";
+	font-size: 18px;
+	font-family: fontAwesome;
+	padding: 12px 20px 0;
+	pointer-events: none;
+	position: absolute;
+	right: 0px;
+	top: 0;
+}
+.booking-form .styled-select select {
+	border-radius: 36px;
+	color: #333;
+	font-size: 13px;
+	height: 45px;
+	margin: 0;
+	outline: medium none;
+	padding: 6px 5%;
+	width: 100%;
+    -moz-appearance: none;
+}
+.booking-form .styled-select .form-control option {
+	color: #333;
+	font-size: 14px;
+	padding: 2px 0;
+}
+
+/*Booking Form Blue*/
+.booking-form.form-blue input,
+.booking-form.form-blue a.btn {
+	border-radius: 36px;
+}
+.booking-form.form-blue input {
+	background: rgba(255, 255, 255, 0.1) none repeat scroll 0 0;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.booking-form.form-blue .form-group {
+	position: relative;
+}
+.booking-form.form-blue input::-webkit-placeholder,
+.booking-form.form-blue input::-moz-placeholder,
+.booking-form.form-blue input::-ms-placeholder  {
+  color: #eee;
+}
+.booking-form.form-blue .form-control:focus, 
+.booking-form.form-blue .form-control:active {
+	background: rgba(255, 255, 255, 0.2) none repeat scroll 0 0;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	color: #fff !important;
+}
+.booking-form.form-blue .styled-select::after {
+	background: rgba(255, 255, 255, 0.1) none repeat scroll 0 0;
+	border-radius: 0 36px 36px 0;
+	bottom: 0;
+	color: #fff;
+	content: "\f107";
+	font-size: 18px;
+	font-family: fontAwesome;
+	padding: 12px 20px 0;
+	pointer-events: none;
+	position: absolute;
+	right: 0px;
+	top: 0;
+}
+.booking-form.form-blue .styled-select select {
+	background: rgba(255, 255, 255, 0.1) none repeat scroll 0 0;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 36px;
+	color: #fff;
+	font-size: 13px;
+	height: 45px;
+	margin: 0;
+	outline: medium none;
+	padding: 6px 5%;
+	width: 100%;
+    -moz-appearance: none;
+}
+.booking-form.form-blue .styled-select .form-control option {
+	background: #fff none repeat scroll 0 0;
+	color: #333;
+	font-size: 14px;
+	padding: 2px 0;
+}
+.booking-form.form-blue a.btn {
+	background-color: rgba(255, 255, 255, 0.1) !important;
+	color: #fff !important;
+}
+.booking-form.form-blue a.btn:hover {
+	background-color: #333 !important;
+}
+
+/* Form-home */
+.booking-form.form-home input, .booking-form.form-home a.btn,.booking-form.form-home .styled-select select {
+	border-radius: inherit;
+}
+.booking-form.form-home {
+	border-radius: 4px;
+}
+.booking-form.form-home input {
+	background: rgba(255,255,255,1);
+}
+.booking-form.form-home .form-group {
+	margin-bottom: 15px;
+}
+.booking-form.form-home .form-control:focus, .booking-form.form-home .form-control:active {
+	background: rgba(255,255,255,0.9);
+}

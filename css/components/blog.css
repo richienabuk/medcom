@@ -1,0 +1,80 @@
+.panel-bottom {
+	padding: 50px 0;
+}
+
+.panel-bottom .block-title {
+	padding: 15px 0;
+	margin-bottom: 10px;
+}
+.panel-bottom .block-title span {
+	font-weight: 900;
+	color: #c00000;
+}
+.region-panel-bottom .views-field-title {
+	margin-bottom: 7px;
+}
+
+.region-panel-bottom .views-field-title a {
+	color: /*#0088cc;*/ #c00000;
+	font-size: 1.4em;
+	font-weight: 600;
+	letter-spacing: normal;
+	line-height: 27px;
+	margin: 0 0 14px 0;
+}
+
+.region-panel-bottom .views-field-nothing .date {
+	float: left;
+	margin-right: 10px;
+	margin-top: 8px;
+	text-align: center;
+}
+.region-panel-bottom .views-field-nothing .month {
+    background-color:/* #0088cc;*/#c00000;
+}
+.region-panel-bottom .views-field-nothing .date .month {
+/*	background: #CCC; */
+	border-radius: 0 0 2px 2px;
+	box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.07) inset;
+	color: #FFF;
+	font-size: 0.9em;
+	padding: 0 10px 2px;
+}
+.region-panel-bottom .views-field-nothing .date .day {
+    background: #FFF;
+		color: /*#0088cc; */ #c00000;
+}
+
+.region-panel-bottom .views-field-nothing .date .day {
+	background: #F7F7F7;
+/*	color: #CCC;*/
+	display: block;
+	font-size: 18px;
+	font-weight: 500;
+	font-weight: bold;
+	padding: 8px;
+}
+
+#block-medcom-views-block-blog-block-1 {
+	margin: 0 35px;
+}
+
+.region-panel-bottom .views-field-view-node a {
+	color: #c00000;
+}
+
+.blogpost .post-content a {
+	font-size: 2.2em;
+	font-weight: 300;
+	line-height: 42px;
+	margin: 0 0 32px 0;
+}
+.blogpost .post-content p {
+    color: #777777;
+    line-height: 24px;
+    margin: 0 0 20px;
+}
+
+.blogpost .post-content {
+	margin: 10px 0;
+}

@@ -1,0 +1,50 @@
+.services .serv-sec{background: #1abc9c;}
+.services .serv-sec.serv-sec2{ background: #1abc9c;}
+.services .serv-sec.serv-sec3{background: #1abc9c;}
+
+@media (min-width: 768px){
+.services .serv-sec{   
+  float: left;  
+	width: 33.33%; 
+}
+}
+
+.services .serv-sec{ 
+	padding: 80px 43px;
+}
+
+.services .serv-sec.serv-sec2{
+	opacity: 0.8;
+}
+.services .serv-sec.serv-sec3{
+	opacity: 0.6;
+}
+.services .serv-sec h3{   
+  text-transform: capitalize;  
+	font-weight: 600;  
+	color: #fff; 
+}
+.services .serv-sec p{ 
+  color:#fff; 
+	margin:5px 0 0 0;
+}
+.services .serv-sec a{   
+  color: #fff;  
+	text-transform: uppercase;  
+	border: solid 1px #fff;  
+	padding: 14px 40px;  
+	border-radius: 5px;  
+	display: inline-block;
+  margin: 28px 0 0 0;  
+	font-weight: 600;
+}
+.services .serv-sec a:hover{ 
+  background:#fff; 
+	color:#34bcd0;
+}
+
+/*
+.services .serv-sec{background: #02adc6;}
+.services .serv-sec.serv-sec2{ background: #02adc6;}
+.services .serv-sec.serv-sec3{background: #02adc6;}
+*/

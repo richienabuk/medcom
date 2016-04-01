@@ -1,0 +1,152 @@
+#footer {
+	background: #11040a;
+	border-top: 4px solid #0e0e0e;
+/*	font-size: 0.9em;*/
+	margin-top: 50px;
+	padding: 70px 0 0;
+	position: relative;
+	clear: both;
+	color: #c9bfbf;
+}
+
+
+#footer h1, #footer h2, #footer h3, #footer h4, #footer a {
+	color: #FFF !important;
+}
+
+#footer h4 {
+	font-size: 1.8em;
+	font-weight: 200;
+}
+
+#footer .container .row > div {
+  margin-bottom: 25px;
+}
+/* Newsletter Subscription */
+.region-footer-top-first a {
+	color: #333;
+}
+/*
+#edit-subscribe {
+	color: #333;
+}
+
+#footer a:hover {
+	color: #CCC;
+}
+
+#footer form {
+	filter: alpha(opacity=85);
+	opacity: 0.85;
+}
+*/
+#edit-mail-wrapper .form-email {
+	width: 100%;
+	max-width: 215px;
+	float: left;
+}
+#edit-mail-wrapper .description {
+	display: none;
+}
+#edit-mail-wrapper label {
+	float: left;
+}
+
+/* end of newsletter */
+
+#footer .container input:focus {
+	box-shadow: none;
+}
+/* ribbon */
+#footer .footer-ribbon {
+	background: #999;
+	position: absolute;
+	margin: -90px 0 0 14px;
+	padding: 10px 20px 6px 20px;
+}
+
+#footer .footer-ribbon:before {
+	border-right: 10px solid #646464;
+	border-top: 16px solid transparent;
+	content: "";
+	display: block;
+	height: 0;
+	left: -10px;
+	position: absolute;
+	top: 0;
+	width: 7px;
+}
+
+#footer .footer-ribbon span {
+	color: #FFF;
+	font-size: 1.6em;
+	font-family: "Shadows Into Light", cursive;
+}
+
+#footer .footer-ribbon {
+  background: #0088cc;
+}
+
+/* end of ribbon */
+
+/* footer contact */
+
+footer .contact {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+footer .contact i {
+	display: block;
+	float: left;
+	font-size: 1.2em;
+	margin: 7px 8px 10px 0;
+	position: relative;
+	text-align: center;
+	top: -2px;
+	width: 16px;
+}
+
+footer .contact i.fa-envelope {
+	font-size: 1em;
+	top: 0;
+}
+
+footer .contact p {
+	margin-bottom: 10px;
+}
+
+/* end of footer contact */
+#footer .footer-copyright {	
+	background: #F5EBF2;
+	border-top: 4px solid #060606;
+	margin-top: 40px;
+	padding: 10px 0 10px;
+	color: #333;
+}
+
+.footer-copyright .container .row > div {
+	margin-bottom: 0 !important;
+}
+
+
+ul.menu {
+    margin-left: 0;
+}
+.social-icons li {
+	margin-right: 15px;
+	font-size: 1.5em;
+}
+.social-icons {
+    padding-left: 0;
+}
+@media only screen and (max-width: 767px) {
+  .footer-copyright div {
+    text-align: center;
+  }
+	/*
+  footer, ul.menu  {
+    text-align: center;
+  }*/
+}
