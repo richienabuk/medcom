@@ -46,6 +46,7 @@ img {
 	-o-transition: all .25s ease;
 	transition: all .25s ease;
 }
+/*
 iframe,
 audio {
 	width: 100%;
@@ -68,7 +69,7 @@ button:focus {
 
 	outline: 0; 
 }
-
+*/
 p {
 /*	color: #777777 !important; 
 	line-height: 24px !important;
